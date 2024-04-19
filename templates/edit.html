@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if uploads %}
+<h2>Available Images</h2>
+<ul>
+    {% for upload in uploads %}
+    <li><a href="{{ url_for('download', upload_id=upload.id) }}">{{ upload.filename }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
